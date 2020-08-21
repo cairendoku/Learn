@@ -1,0 +1,15 @@
+p.a span {
+     font-weight: bold;
+}
+p.b span {
+     font-weight: bold;
+     display: block;
+}
+.c{
+     background-color: rgb(0, 183, 255);
+     color:white;
+     float: left;
+     block-size: 550px;
+     padding: 50px;
+     padding-top: 30px;
+}
