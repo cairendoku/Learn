@@ -1,0 +1,7 @@
+p.a span {
+     font-weight: bold;
+ }
+p.b span {
+     font-weight: bold;
+     display: block;
+ }
