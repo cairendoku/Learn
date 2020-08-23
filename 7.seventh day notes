@@ -1,0 +1,121 @@
+1.position定位，通过定位可以覆盖正常文档流，实现布局变化
+2.position: static静态定位，将元素放入它在文档布局流中的正常位置，是一种默认行为
+3.position: relative相对定位，可以修改盒子的最终位置，通过指定值从top，right，bottom，left方向施加推力实现
+4.position: absolute绝对定位，绝对定位的元素不再存在于正常文档布局流中，独立于一切，top，right，bottom，left指定元素应距离每个包含元素的边的距离，绝对定位是相对于最近的position非staic的祖先元素
+5.z-index的值影响定位元素位于该轴上的位置；正值将它们移动到堆栈上方，负值将它们向下移动到堆栈中，默认情况下，定位的元素都具有z-index为auto，实际上为0
+6.position: fixed固定定位，与绝对定位的工作方式完全相同，区别是固定定位元素相对于浏览器视口本身
+7.position: sticky粘性定位，允许被定位的元素表现得像相对定位一样，直到它滚动到某个阈值点为止，此后它就变得固定了
+8.对齐方式：
+1）行内元素的水平居中
+.parent{text-align: center;}    
+.child{display: inline-block;}
+2）块状元素的水平居中（定宽）
+.child{
+         width: 200px;
+         margin: 0 auto;
+     }
+3）块状元素的水平居中（不定宽）
+可以直接给不定宽的块级元素设置text-align：center来实现，也可以给父元素加text-align:center 来实现居中效果
+4）垂直居中
+条件是父元素是盒子容器且高度已经设定
+#1子元素是行内元素，高度是由其内容撑开的
+设定父元素的line-height为其高度
+#2子元素是块级元素但是子元素高度没有设定
+给父元素设定
+display:table-cell;vertical-align:middle
+#3子元素是块级元素且高度已经设定
+计算子元素的margin-top或margin-bottom
+5）水平垂直居中
+#1水平对齐+行高
+text-align + line-height
+#2水平+垂直对齐
+在父元素设置text-align和vertical-align，并将父元素设置为table-cell元素，子元素设置为inline-block元素
+#3相对+绝对定位
+.parent{
+ position: relative;
+}
+.child{
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ height: 50px;
+ width: 80px;
+ margin: auto;
+}
+9.网页布局
+1）一列布局
+margin : 0 auto
+2）两列布局
+#1双inline-block
+.wrapper {
+ font-size: 0;  
+}
+.left,
+.right {
+ display: inline-block;
+ vertical-align: top;  
+ box-sizing: border-box;
+}
+.right {
+ width: calc(100% - 140px);
+}
+#2双float
+.wrapper{
+ overflow: auto; 
+}
+.left,
+.right {
+ float: left;
+ box-sizing: border-box;
+}
+.right {
+ width: calc(100% - 140px);
+}
+#3float+margin-left
+.wrapper-float {
+ overflow: hidden;   
+}
+.left {
+ float: left;
+}
+.right {
+ margin-left: 150px;
+}
+#4absolute+margin-left
+.left {
+ position: absolute;
+}
+.right {
+ margin-left: 150px;
+}
+#5float+BFC
+.wrapper {
+ overflow: auto;
+}
+.left {
+ float: left;
+ margin-right: 20px;
+}
+.right {
+ margin-left: 0;
+ overflow: auto;
+}
+#6flex
+.wrapper {
+ display: flex;
+ align-items: flex-start;
+}
+.left {
+ flex: 0 0 auto;
+}
+.right {
+ flex: 1 1 auto;
+}
+3)三列布局
+两侧定宽中间自适应
+#1圣杯布局
+圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div
+#2双飞翼布局
+双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置
