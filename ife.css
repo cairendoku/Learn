@@ -1,0 +1,126 @@
+html {
+    font-family: sans-serif;
+}
+body,h1,ul,p,a {
+    margin: 0;
+    padding: 0;
+    font: 400 14px/1.5 sans-serif;
+}
+body {
+    min-width: 1000px; 
+}
+ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+}
+header {
+    background-color: rgb(49, 49, 49);
+}
+.header {
+    height: 80px;
+    margin: 0 auto;
+    width: 960px; 
+}
+ h1 {
+    display: inline-block;
+    line-height: 80px;
+    font-size: 30px;
+    color:white;
+}
+.header ul {
+    float: right;
+    padding-top: 10px;
+}
+.header li {
+    margin-left: 10px;
+    }
+.header a {
+    color: white;
+}
+section{
+    background-color: #32cd32;
+}
+.banner {
+    position: relative;
+    height: 300px;
+    margin: 0 auto;
+    width: 960px;
+}
+.banner ul {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+.banner li {
+    padding: 4px 8px;
+    border: 1px solid #696969;
+    color: #696969;
+    background-color: #90ee90;
+}
+.banner li:nth-of-type(2) {
+    padding-top: 18px;
+    background-color: #f0fff0;
+}
+.list_border {
+    border-bottom: solid #c0c0c0 1px;
+}
+.list_box {
+    position: relative;
+    height: 70px;
+    margin: 0 auto;
+    width: 960px;
+}
+.list_box ul {
+   position: absolute;
+    bottom: -1px; 
+    font-size: 0;
+}
+.list_box li {
+    padding: 14px 25px 8px;
+    border: 1px solid #c0c0c0;
+    border-radius: 15px 15px 0 0;
+    font-size: 14px;
+   background-color: #e6e6e6;
+}
+.list_box li:nth-of-type(1) {
+    border-bottom: 1px solid #fff;
+    background-color:#fff;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    width: 960px;
+}
+article {
+    flex: 1;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 80px;
+    border: 1px solid #c0c0c0;
+    text-align: center;
+}
+.box_normal {
+    flex: 1;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 80px;
+    border: 1px solid #c0c0c0;
+    text-align: center;
+}
+.box_bigger {
+    flex: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+#footer {
+    padding-top: 15px;
+    height: 100px;
+    background-color: #808080;
+    text-align: center;
+    color: white;
+}
